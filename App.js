@@ -1,10 +1,16 @@
+import 'react-native-gesture-handler'
 import React from 'react';
+import { NavigationContainer} from '@react-navigation/native';
 import { View, StatusBar } from 'react-native';
+import firebase from './src/services/firebaseconection';
+
+import Routes from './src/routes';
 
 export default function App() {
  return (
-     <View>
+     <NavigationContainer>
        <StatusBar backgroundColor="#131313" barStyle="light-content" />
-     </View>
+       <Routes />
+     </NavigationContainer>
   );
 }
