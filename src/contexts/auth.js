@@ -3,11 +3,10 @@ import React, { useState, createContext } from 'react';
 export const AuthContext = createContext({});
 
 function AuthProvider({ children }){
-    const [user, setUser] = useState({
-        nome: 'Denilson'
-    })
+    const [user, setUser] = useState(null);
+
     return(
-     <AuthContext.Provider value={{ user }}>
+     <AuthContext.Provider value={{ signed: !!user , user }}>
          {children}
      </AuthContext.Provider>
     );
