@@ -9,7 +9,7 @@ function AuthProvider({ children }){
     //Cadastrar usuario
     async function signUp(email, password, nome){
         await firebase.auth().createUserWithEmailAndPassword(email,password)
-        .then((value)=>{
+        .then(async (value)=>{
             let uid = value.user.uid;
             await firebase.database().ref('users').child(uid).set({
                 saldo: 0,
